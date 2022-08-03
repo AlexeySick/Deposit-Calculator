@@ -1,0 +1,223 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+.body{
+	font-family: 'Open Sans', sans-serif;
+}
+.bodybg{
+	position: absolute;
+	background: #FAF6F6;
+	width: 1152px;
+	height: 800px;
+	top: 44px;
+	left: 0px;
+}
+.bglogo{
+	top: 0;
+	text-align: center;
+	background-repeat: no-repeat;
+	position: absolute;
+}
+.logo{
+	position: absolute;
+	width: 87px;
+	height: 24px;
+	left: 142px;
+	top: 12px;
+}
+.bg{
+	position: absolute;
+	background: #FFF;
+	width: 800px;
+	height: 800px;
+	left: 165px;
+	top: 44px;
+}
+#h1{
+	position: absolute;
+	width: 600px;
+	height: 42px;
+	left: 182px;
+	top: 55px;
+
+
+	color: #1F2229;
+}
+#dep{
+	position: absolute;
+	width: 130px;
+	height: 16px;
+	left: 249px;
+	top: 14px;
+
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 16px;
+	display: flex;
+	align-items: center;
+
+	color: #FFFFFF;
+}
+#p{
+	position: absolute;
+	width: 715px;
+	height: 20px;
+	left: 43px;
+	top: 130px;
+	text-align: center;
+	font-size: 15px;
+	line-height: 20px;
+	color: #1F2229;
+}
+#startDate{
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 242px;
+	height: 52px;
+	left: 114px;
+	top: 243px;
+	color: #000000;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	text-indent: 9px;
+	font-size: 14px;
+}
+#term{
+	box-sizing: border-box;
+	color: #000000;
+	position: absolute;
+	width: 242px;
+	height: 52px;
+	left: 438px;
+	top: 243px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	text-indent: 9px;
+	font-size: 14px;
+}
+#sum{
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 242px;
+	height: 52px;
+	left: 114px;
+	top: 333px;
+	text-indent: 9px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	font-size: 14px;
+}
+#percent{
+	box-sizing: border-box;
+	text-indent: 9px;
+	position: absolute;
+	width: 242px;
+	height: 52px;
+	left: 438px;
+	top: 332px;
+	color: #000000;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	font-size: 14px;
+}
+#sumAdd{
+	box-sizing: border-box;
+	text-indent: 9px;
+	position: absolute;
+	width: 242px;
+	height: 52px;
+	left: 438px;
+	top: 420px;
+	font-size: 14px;
+	background: #FFFFFF;
+	border: 1px solid #000000;
+	color: #000000;
+}
+
+#CalcBtn{
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 172px;
+	height: 52px;
+	left: 114px;
+	top: 536px;
+	font-size: 15px;
+	background: #33C4A0;
+	border: 2px solid #33C4A0;
+
+	color: #FFFFFF;
+
+}
+
+#galka{
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	left: 114px;
+	top: 433px;
+
+	background: #FFFFFF;
+	border: 2px solid #000000;
+}
+#galka:checked ~ #sumAdd{
+	display: block;
+}
+#text{
+	position: absolute;
+	width: 224px;
+	height: 16px;
+	left: 154px;
+	top: 438px;
+
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+
+	color: #000000;
+}
+#results{
+	position: absolute;
+	width: 500px;
+	height: 47px;
+	left: 167px;
+	top: 669px;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 38px;
+	line-height: 47px;
+}
+::placeholder {
+	font-size: 12px;
+	color:#000;
+}
+select{
+	box-sizing: border-box;
+
+	position: absolute;
+	width: 71px;
+	height: 52px;
+	left: 609px;
+	top: 243px;
+
+	background: #FFFFFF;
+	border: 1px solid #000000;
+}
+#selectY{
+	box-sizing: border-box;
+	border: 1px solid #000000;
+	width: 71px;
+	height: 52px;
+}
+#selectM{
+	box-sizing: border-box;
+	border: 1px solid #000000;
+	width: 71px;
+	height: 52px;
+}

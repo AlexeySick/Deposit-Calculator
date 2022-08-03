@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Calc</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="accets/date/cssworld.ru-xcal.css" />
+  <script type="text/javascript" src="accets/date/cssworld.ru-xcal-en.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript" src="accets/jquery.js"></script>
+ </head>
+ <body class="body">
+  <header class="header">
+    <p><img class="bglogo" src="img/Rectangle 1.svg"></p>
+    <p id="dep">Deposit Calculator</p>
+    <a href="index.html"><img src="img/logo-light 1.svg" class="logo"></a>
+  </header>
+  <div class="bodybg">
+      
+  </div>
+  <div class="bg">
+    <div>
+      <h1 id="h1">Депозитный калькулятор</h1>
+      <p id="p">Калькулятор депозитов позволяет рассчитать ваши доходы после внесения суммы на счет в банке по опредленному тарифу.</p>
+      <p id="text">Ежемесячное пополнение вклада</p>
+    </div>
+    <div>
+        <form id="calcform" method="post">
+          <input type="text" class="datepicker" placeholder="Дата открытия" name="startDate" id="startDate">
+          <input type="number" placeholder="Срок вклада" name="term" id="term" min="1" max="60">
+          <select name="select" id="select">
+            <option name="selectM" id="selectM" value="месяц">месяц</option>
+            <option name="selectY" id="selectY" value="год">год</option>
+          </select>
+          <input type="number" inputMode='decimal' onFocus="this.type='number'; this.value=this.lastValue" onBlur="this.type=''; this.lastValue=this.value; this.value=this.value==''?'':(+this.value).toLocaleString()" min="1000" max="3000000" required="required" placeholder="Сумма вклада" name="sum" id="sum">
+          <input type="number" placeholder="Процентная ставка, % годовых" min="3" max="100" name="percent" id="percent">
+          <input type="checkbox" name="galka" id="galka">
+          <input hidden type="number" inputMode='decimal' onFocus="this.type='number'; this.value=this.lastValue" onBlur="this.type=''; this.lastValue=this.value; this.value=this.value==''?'':(+this.value).toLocaleString()" min='0' max='3000000' placeholder="Сумма пополнения вклада" name="sumAdd" id="sumAdd">
+	  <input type="submit" name="CalcBtn" id="CalcBtn" value="Рассчитать" />
+        </form>
+    </div>
+	<div class="res"><p id="results"></p></div>
+  </div>
+  <script>xCal.all("datepicker");</script>
+  <script type="text/javascript">
+    $("#calcform").submit(function(event) {
+    var ajaxRequest;
+	function moneyFormat(n) {
+		return '₽ '+ parseFloat(n).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1 ").replace('.', ',');
+	}
+    event.preventDefault();
+	$("#result").html('');
+	var values = $(this).serialize();
+        $.ajax({
+            type: 'POST',
+            url: 'http://localhost/Deposit%20Calculator/calc.php',
+	        dataType: 'json',
+            data: values,
+			success : function (result) {
+			console.log(result);
+				$("#results").html(moneyFormat(result['sumN']));
+			}
+        });
+        });
+  </script> 
+ </body>
+</html>
